@@ -120,8 +120,6 @@
         .logo {
             max-width: 200px;
             height: auto;
-            filter: drop-shadow(0 0 15px #8A2BE2) drop-shadow(0 0 30px #ffffff);
-            animation: glow 2s ease-in-out infinite alternate;
         }
 
         @keyframes glow {
@@ -133,6 +131,41 @@
             }
         }
 
+        .logo-777 {
+            font-size: 5em;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 
+                0 0 20px #ffffff,
+                0 0 40px #ffffff,
+                0 0 60px #ffffff,
+                0 0 80px #ffffff,
+                0 0 100px #ffffff,
+                0 0 120px #ffffff;
+            
+            line-height: 1;
+        }
+
+        @keyframes brightPulse {
+            0%, 100% {
+                text-shadow: 
+                    0 0 20px #ffffff,
+                    0 0 40px #ffffff,
+                    0 0 60px #ffffff,
+                    0 0 80px #ffffff,
+                    0 0 100px #ffffff;
+                transform: scale(1);
+            }
+            50% {
+                text-shadow: 
+                    0 0 40px #ffffff,
+                    0 0 80px #ffffff,
+                    0 0 120px #ffffff,
+                    0 0 160px #ffffff,
+                    0 0 200px #ffffff;
+                transform: scale(1.05);
+            }
+        }
         h1 {
             color: #ffffff;
             font-size: 3em;
@@ -284,6 +317,7 @@
 
     <div class="logo-container">
         <img src="logo.png" alt="Q3Telekinesis Logo" class="logo">
+        <div class="logo-777">777</div>
     </div>
 
     <h1>Q3TELEKINESIS</h1>
