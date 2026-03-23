@@ -6,8 +6,8 @@
     <title>Download Q3Telekinesis</title>
     <style>
         body {
-            background-color: #8371e2;
-            color: #ffffff;
+            background-color: #8371e1;
+            color: #8371e1;
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
             margin: 0;
@@ -15,8 +15,106 @@
             min-height: 100vh;
         }
 
+        /* Top Left Navigation */
+        .nav-top-left {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .console-btn {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #8A2BE2;
+            padding: 10px 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            cursor: pointer;
+            border-radius: 4px;
+            text-shadow: 0 0 10px #ffffff;
+            box-shadow: 0 0 15px #8A2BE2;
+            transition: all 0.3s ease;
+        }
+
+        .console-btn:hover {
+            background-color: #8A2BE2;
+            box-shadow: 0 0 30px #ffffff;
+            transform: scale(1.05);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: #2E0052;
+            border: 2px solid #8A2BE2;
+            margin: 5% auto;
+            padding: 30px;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 0 30px #8A2BE2;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close {
+            color: #ffffff;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            text-shadow: 0 0 10px #ffffff;
+        }
+
+        .close:hover {
+            color: #8A2BE2;
+        }
+
+        .command-category {
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .command-category h3 {
+            color: #8A2BE2;
+            border-bottom: 1px solid #8A2BE2;
+            padding-bottom: 10px;
+            text-shadow: 0 0 10px #8A2BE2;
+        }
+
+        .command {
+            background-color: #1a0033;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 3px solid #8A2BE2;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .command-code {
+            color: #00ff00;
+            font-weight: bold;
+        }
+
+        .command-desc {
+            color: #cccccc;
+            margin-top: 5px;
+        }
+
         .logo-container {
             margin-bottom: 20px;
+            margin-top: 40px;
         }
 
         .logo {
@@ -107,13 +205,88 @@
 </head>
 <body>
 
-    <!-- LOGO SECTION -->
+    <!-- Top Left Console Commands Button -->
+    <div class="nav-top-left">
+        <button class="console-btn" onclick="openModal()">⌨️ CONSOLE COMMANDS</button>
+    </div>
+
+    <!-- Modal for Console Commands -->
+    <div id="consoleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 style="color: #ffffff; text-shadow: 0 0 10px #8A2BE2;">Q3Telekinesis Console Commands</h2>
+            
+            <div class="command-category">
+                <h3>Basic Commands</h3>
+                <div class="command">
+                    <div class="command-code">/telekinesis</div>
+                    <div class="command-desc">Enable telekinesis/Disable Telekinesis mod</div>
+                </div>
+                <div class="command">
+                    <div class="command-code">/client_id</div>
+                    <div class="command-desc">Change another player's model</div>
+                </div>
+                <div class="command">
+                    <div class="command-code">/kill</div>
+                    <div class="command-desc">The blood was removed from the mod and the corpse appears dying</div>
+                </div>
+            </div>
+
+            <div class="command-category">
+                <h3></h3>
+                <div class="">
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+                <div class="">
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+                <div class="">
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+                <div class="">
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+            </div>
+
+            <div class="">
+                <h3></h3>
+                <div class="">
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+                <div class="">
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+                <div class="">
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+            </div>
+
+            <div class="">
+                <h3></h3>
+                <div class="">
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+                <div class="">
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="logo-container">
-        <!-- Replace 'logo.png' with your actual logo filename -->
         <img src="logo.png" alt="Q3Telekinesis Logo" class="logo">
     </div>
 
-    <h1>Q3Telekinesis</h1>
+    <h1>Q3TELEKINESIS</h1>
     <div class="subtitle">Quake 3 Arena Modification</div>
 
     <div class="download-box">
@@ -135,6 +308,33 @@
 
     <br><br>
     <p style="color: #c0c0c0; font-size: 0.8em; text-shadow: 0 0 5px #ffffff;">Hosted via GitHub Pages</p>
+
+    <script>
+        function openModal() {
+            document.getElementById("consoleModal").style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            document.getElementById("consoleModal").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            var modal = document.getElementById("consoleModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
 
 </body>
 </html>
