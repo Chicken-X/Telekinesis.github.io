@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3Telekinesis - Quake 3 Arena Mod</title>
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #0a0a0f;
+        color: #e0e0e0;
+        line-height: 1.6;
+        background-image: url('X.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+
+    /* Dark overlay for better readability */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(10, 10, 15, 0.85);
+        z-index: -1;
+    }
+
+    /* Header */
+    header {
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(180deg, #1a1a2e 0%, #0a0a0f 100%);
+        border-bottom: 3px solid #00d2ff;
+        box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+    }
+
+    .logo {
+        max-width: 150px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        color: #00d2ff;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin: 10px 0;
+        text-shadow: 0 0 20px rgba(0, 210, 255, 0.8);
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+        color: #0099cc;
+        margin-bottom: 15px;
+    }
+
+    /* Navigation */
+    nav {
+        background-color: #16161a;
+        padding: 15px;
+        text-align: center;
+        border-bottom: 2px solid #00d2ff;
+    }
+
+    nav a {
+        color: #00d2ff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        padding: 8px 15px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #ff00de;
+        background-color: rgba(0, 210, 255, 0.1);
+        box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+    }
+
+    /* Main Content */
+    .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    section {
+        background-color: #16161a;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        border-left: 4px solid #00d2ff;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+        color: #00d2ff;
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+    }
+
+    p {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    /* Links */
+    a {
+        color: #00d2ff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #ff00de;
+        text-decoration: underline;
+    }
+
+    /* Buttons */
+    .btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #00d2ff 0%, #0099cc 100%);
+        color: #000;
+        padding: 12px 30px;
+        margin: 10px 5px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+    }
+
+    .btn:hover {
+        background: linear-gradient(135deg, #ff00de 0%, #cc00b3 100%);
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 0, 222, 0.6);
+        text-decoration: none;
+    }
+
+    /* Download Section */
+    .download-section {
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(180deg, #1a1a2e 0%, #16161a 100%);
+        border: 2px solid #00d2ff;
+        border-radius: 10px;
+        margin: 30px 0;
+    }
+
+    .version {
+        color: #00d2ff;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .date {
+        color: #888;
+        margin-bottom: 20px;
+    }
+
+    /* Installation Steps */
+    .installation-steps {
+        background-color: #1a1a2e;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+
+    .installation-steps ol {
+        margin-left: 20px;
+    }
+
+    .installation-steps li {
+        margin-bottom: 10px;
+        color: #ccc;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 30px;
+        background-color: #0a0a0f;
+        border-top: 2px solid #00d2ff;
+        margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2rem;
+        }
+        
+        nav a {
+            display: block;
+            margin: 5px 0;
+        }
+    }
+</style>
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <img src="logo.png" alt="Q3Telekinesis Logo" class="logo-img">
+            <span class="logo-text">QuakeMods</span>
+        </a>
+        <div class="nav-links">
+            <a href="#">Gallery</a>
+            <a href="#">Console Commands</a>
+            <a href="#">Compilations</a>
+            <a href="#">++</a>
+            <a href="#" class="lang-btn">EN</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <div class="project-header">
+                <img src="logo.png" alt="Q3Telekinesis" class="project-logo">
+                <div>
+                    <h1 class="project-title"><span class="telekinesis-text">Q3Telekinesis</span></h1>
+                    <h2 class="project-subtitle">Quake 3 Arena mod</h2>
+                </div>
+            </div>
+            
+            <div class="description">
+                <p><span class="telekinesis-text">Telekinesis</span> mod for Quake 3 Arena that adds powerful mind-based abilities to the game.</p>
+                <p>Manipulate objects, throw enemies, and master the force in intense arena combat. This mod introduces a completely new gameplay mechanic with <span class="telekinesis-text">telekinetic</span> powers that can be used in both single-player and multiplayer modes.</p>
+            </div>
+
+            <!-- Links Section -->
+            <div class="links-section">
+                <div class="link-item">
+                    <span>🎮</span>
+                    <strong><span class="telekinesis-text">Q3Telekinesis</span>:</strong>
+                    <a href="#">ModDB</a>
+                    <span class="separator">-</span>
+                    <a href="#">Source code</a>
+                    <span class="separator">-</span>
+                    <span>by TelekineticDev</span>
+                </div>
+                
+                <div class="link-item">
+                    <span>📦</span>
+                    <strong>Community:</strong>
+                    <a href="#">Discord Server</a>
+                    <span class="separator">-</span>
+                    <a href="#"><span class="telekinesis-text">Q3Telekinesis</span> News</a>
+                </div>
+                
+                <div class="link-item">
+                    <span></span>
+                    <a href="#">Documentation</a>
+                    <span class="separator">-</span>
+                    <a href="#">Changelog</a>
+                </div>
+                
+                <div class="link-item">
+                    <span>👥</span>
+                    <a href="#">Acknowledgements</a>
+                </div>
+                
+                <div class="link-item">
+                    <span>💰</span>
+                    <a href="#">Support Project</a>
+                </div>
+            </div>
+
+            <!-- Installation Section -->
+            <div class="install-section">
+                <h3>▶ <span class="telekinesis-text">Q3Telekinesis</span> Installation</h3>
+                <ul>
+                    <li>Extract the downloaded .pk3 file to your Quake 3/baseq3/ folder</li>
+                    <li>Launch Quake 3 Arena</li>
+                    <li>Go to Mods menu and select "<span class="telekinesis-text">Q3Telekinesis</span>"</li>
+                    <li>Enjoy <span class="telekinesis-text">telekinetic</span> combat!</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="download-card">
+                <div class="card-title">
+                    <img src="logo.png" alt="Q3Telekinesis" class="card-logo">
+                    <span class="telekinesis-text">Q3Telekinesis</span>
+                </div>
+                <div class="version">v2.1.0</div>
+                <div class="date">23.03.2026</div>
+                
+                <a href="#" class="download-btn">DOWNLOAD .PK3</a>
+                <a href="#" class="download-btn secondary">UPDATER</a>
+                <a href="#" class="download-btn secondary">SOURCE CODE</a>
+                <a href="#" class="download-btn secondary">README</a>
+            </div>
+
+            <div class="download-card">
+                <div class="card-title">
+                    <span>📦</span>
+                    <span class="telekinesis-text">Q3Telekinesis</span> Assets
+                </div>
+                <div class="version">v1.5.0</div>
+                <div class="date">15.03.2026</div>
+                
+                <a href="#" class="download-btn">WINDOWS</a>
+                <a href="#" class="download-btn secondary">LINUX</a>
+                <a href="#" class="download-btn secondary">MACOS</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
